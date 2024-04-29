@@ -13,9 +13,18 @@ st.write(
     )
 )
 
+st.divider() # Draws a horizontal rule
+
 st.write("Using numpy to generate random sample (10 by 20):")
 dataframe = pd.DataFrame(
     data=np.random.randn(10, 20),
     columns=("col %d" % i for i in range(20))
 )
 
+st.write("This is an interactive table")
+st.dataframe(dataframe.style.highlight_max(axis=0))
+
+st.divider()
+
+st.write("This is a static table:")
+st.table(dataframe)
