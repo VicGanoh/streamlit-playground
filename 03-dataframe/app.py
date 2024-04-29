@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 
 st.write("My attempt using data to create a table with streamlit:")
 
@@ -11,3 +12,10 @@ st.write(
         }
     )
 )
+
+st.write("Using numpy to generate random sample (10 by 20):")
+dataframe = pd.DataFrame(
+    data=np.random.randn(10, 20),
+    columns=("col %d" % i for i in range(20))
+)
+
