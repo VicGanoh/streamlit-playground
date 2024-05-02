@@ -10,6 +10,7 @@ DATE_COLUMN = "date/time"
 # Load data set
 DATA_URL = ("https://s3-us-west-2.amazonaws.com/streamlit-demo-data/uber-raw-data-sep14.csv.gz")
 
+@st.cache_data
 def load_data(nrows):
     """
     Load Uber pickups data from a URL.
