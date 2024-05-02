@@ -43,4 +43,4 @@ data = load_data(10000)
 data_load_state.text("Loading data...done!")
 
 st.divider()
-st.subheader("Raw data")
+st.subheader("Raw dat")
