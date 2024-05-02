@@ -42,5 +42,6 @@ data = load_data(10000)
 # Notify the reader that the data was successfully loaded.
 data_load_state.text("Loading data...done!")
 
-st.divider()
+
 st.subheader("Raw data")
+st.write(data)
