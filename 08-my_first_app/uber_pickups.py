@@ -49,6 +49,10 @@ st.write(data)
 # Add Histogram
 st.subheader("Number of pickups by hour")
 
-hist_values = np.histogram(
-    data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0]
-st.bar_chart(hist_values)
+hist_values = pd.DataFrame( {
+    "Number of pickups": np.histogram(data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0],
+    "Hour": list(range(0,24))
+} 
+    
+)
+st.bar_chart(hist_values, x="Hour", y="Number of pickups", use_container_width=True)
