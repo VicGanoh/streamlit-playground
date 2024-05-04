@@ -56,3 +56,10 @@ hist_values = pd.DataFrame( {
     
 )
 st.bar_chart(hist_values, x="Hour", y="Number of pickups", use_container_width=True)
+
+
+# Plotting data on map
+hour_to_filter = 17
+filtered_data = data[data[DATE_COLUMN].dt.hour == hour_to_filter]
+st.subheader(f"Map of all pickups at {hour_to_filter}:00")
+st.map(filtered_data)
