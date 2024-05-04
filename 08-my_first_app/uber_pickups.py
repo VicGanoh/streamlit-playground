@@ -59,7 +59,7 @@ st.bar_chart(hist_values, x="Hour", y="Number of pickups", use_container_width=T
 
 
 # Plotting data on map
-hour_to_filter = 17
-filtered_data = data[data[DATE_COLUMN].dt.hour == hour_to_filter]
-st.subheader(f"Map of all pickups at {hour_to_filter}:00")
+hour = st.slider("hour", 0, 23, 17) # min: 0h, max: 23h, default: 17h
+st.subheader(f"Map of all pickups at {hour}:00")
+filtered_data = data[data[DATE_COLUMN].dt.hour == hour]
 st.map(filtered_data)
